@@ -17,18 +17,21 @@ public class MapFactory {
     }
     
     Map nuevo = null;
-    public Map<String, String> crearMapa(String opcion){
+    public Map crearMapa(String opcion){
         
         if(opcion.equals("H")){
-            nuevo = new HashMap<String, String>();
+            nuevo = new HashMap<>();
+            System.out.println("Se hizo un HashMap");
         }
         
         if(opcion.equals("T")){
             nuevo = new TreeMap<>();
+            System.out.println("Se hizo un TreeMap");
         }
         
         if(opcion.equals("L")){
             nuevo = new LinkedHashMap<>();
+            System.out.println("Se hizo un LinkedHashMap");
         }
         
         return nuevo;
