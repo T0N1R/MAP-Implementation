@@ -18,7 +18,8 @@ import java.util.*;
  * 6 de marzo, 2018
  * Hoja de Trabajo 6
  *
- * @author Antonio
+ * @author Antonio #17273
+ * @author Andres Perez #16362	
  */
 public class Main {
 

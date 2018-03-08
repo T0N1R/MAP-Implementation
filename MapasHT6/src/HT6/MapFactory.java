@@ -8,7 +8,8 @@ import java.util.*;
 
 /**
  *Clase Factory donde se va a decidir que tipo de Mapa se va a utilizar.
- * @author Antonio
+ * @author Antonio #17273
+ * @author Andres Perez #16362
  */
 public class MapFactory {
     
