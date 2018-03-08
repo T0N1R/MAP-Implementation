@@ -1,5 +1,6 @@
 package HT6;
 
+import static java.awt.PageAttributes.MediaType.A;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -38,7 +39,9 @@ public class Main {
         System.out.println("LinkedHashMap: L");
         String opcion1 = scan.nextLine();
         
-        Map mapa = factory.crearMapa(opcion1);
+        Map cartas = factory.crearMapa(opcion1);
+        Map deck = factory.crearMapa(opcion1);
+        Map<String, Integer> cantidadDeck = factory.crearMapa(opcion1);
         
         File all_cards = new File("C:/Users/Antonio/Documents/NetBeansProjects/MapasHT6/MapasHT6/src/HT6/cards_desc.txt");
         FileReader leer = new FileReader(all_cards);
@@ -51,18 +54,74 @@ public class Main {
             String nombre = separate[0];
             String tipo = separate[1];
             
-            mapa.put(nombre, tipo);
+            cartas.put(nombre, tipo);
         }
         
-        System.out.println("Numero de cartas: " + mapa.size());
-        while(estado != true){
+        System.out.println("Numero de cartas: " + cartas.size());
+        System.out.println("A Hero Emerges" + cartas.get("A Hero Emerges"));
+        //String opcion2 = scan.nextLine();
+        while(estado == true){
             System.out.println("ELIGA LA ACCION QUE DESEA REALIZAR: ");
             System.out.println("1- Agregar carta al deck");
-            System.out.println("2-Datos de carta (TIPO)");
+            System.out.println("2-Datos una carta (TIPO)");
             System.out.println("3-Mostrar cada carta en su propio deck (nombre, tipo, cantidad)");
             System.out.println("4-Mostrar cada carta en su propio deck ordenado por tipo");
             System.out.println("5-Mostrar el nombre y tipo de todas las cartas en la base de datos");
             System.out.println("6-Mostrar el nombre y tipo de todas las cartas del DB ordenadas por tipo");
+            System.out.println("0-Salir");
+            String opcion2 = scan.nextLine();
+            
+            switch (opcion2){
+                
+                case "0":{
+                    estado = false;
+                    break;
+                }
+                
+                case "1":{
+                    System.out.println("*****************************");
+                    System.out.println("*****************************");
+                    System.out.print("Ingrese el nombre de la carta que desea agregar: ");
+                    String nombreCarta = scan.nextLine();
+                    yugi.agregarCarta(nombreCarta, cartas, deck, cantidadDeck);
+                    System.out.println("*****************************");
+                    System.out.println("*****************************");
+
+                    break;
+                }
+                
+                case "2":{
+                    System.out.println("*****************************");
+                    System.out.println("*****************************");
+                    System.out.print("Ingrese el nombre de la carta que desea: ");
+                    String buscarCarta = scan.nextLine();
+                    System.out.println("Nombre de Carta: " + buscarCarta + "\n" + "Tipo de Carta: " + cartas.get(buscarCarta));
+                    System.out.println("*****************************");
+                    System.out.println("*****************************");
+                    break;
+                }
+                
+                case "3":{
+                    
+                    break;
+                }
+                
+                case "4":{
+                    
+                    break;
+                }
+                
+                case "5":{
+                    
+                    break;
+                }
+                
+                case "6":{
+                    
+                    break;
+                }                
+                
+            }
         }
     }
     
