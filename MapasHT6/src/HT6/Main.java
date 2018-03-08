@@ -104,7 +104,7 @@ public class Main {
                 case "3":{
                     System.out.println("*****************************");
                     System.out.println("*****************************");
-                    
+                    yugi.mostrarDeck(deck, cantidadDeck);
                     System.out.println("*****************************");
                     System.out.println("*****************************");
                     break;

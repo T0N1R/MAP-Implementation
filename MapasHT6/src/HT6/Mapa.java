@@ -48,8 +48,11 @@ public class Mapa {
     }
     
     
-    public void mostrarDeck(Map deck){
-        
+    public void mostrarDeck(Map<String, String> deck, Map<String, Integer> cantidadDeck){
+        for(String llave: deck.keySet()){
+            System.out.println("Nombre: " + llave + "\n" + "Tipo: " + deck.get(llave) + "\n" +
+                    "Cantidad en deck: " + cantidadDeck.get(llave) + "\n" + "\n");
+        }
     }
     
 }
