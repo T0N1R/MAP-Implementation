@@ -36,6 +36,17 @@ public class Mapa {
 
     }
     
+    /**
+     * Método para mostrar todas las cartas de la base de datos. Se mostrará el 
+     * nombre de la carta y su tipo
+     * @param cartas 
+     */
+    public void mostrarTodas(Map<String, String> cartas){
+        for(String llave: cartas.keySet()){
+            System.out.println(llave + " -> " + cartas.get(llave));
+        }
+    }
+    
     
     public void mostrarDeck(Map deck){
         

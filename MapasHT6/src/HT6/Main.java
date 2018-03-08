@@ -102,7 +102,11 @@ public class Main {
                 }
                 
                 case "3":{
+                    System.out.println("*****************************");
+                    System.out.println("*****************************");
                     
+                    System.out.println("*****************************");
+                    System.out.println("*****************************");
                     break;
                 }
                 
@@ -112,7 +116,11 @@ public class Main {
                 }
                 
                 case "5":{
-                    
+                    System.out.println("*****************************");
+                    System.out.println("*****************************");
+                    yugi.mostrarTodas(cartas);
+                    System.out.println("*****************************");
+                    System.out.println("*****************************");
                     break;
                 }
                 
