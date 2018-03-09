@@ -86,7 +86,7 @@ public class Main {
                     System.out.println("*****************************");
                     System.out.print("Ingrese el nombre de la carta que desea agregar: ");
                     String nombreCarta = scan.nextLine();
-                    yugi.agregarCarta(nombreCarta, cartas, deck, cantidadDeck, tipoNombreDeck);
+                    yugi.agregarCarta(nombreCarta, cartas, deck, cantidadDeck);
                     System.out.println("*****************************");
 
                     break;
@@ -115,7 +115,7 @@ public class Main {
                 case "4":{
                     System.out.println("*****************************");
                     System.out.println("*****************************");
-                    yugi.ordenarDeck(deck);
+                    yugi.ordenarDeck(deck, cantidadDeck);
                     System.out.println("*****************************");
                     System.out.println("*****************************");
                     break;

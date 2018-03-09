@@ -2,6 +2,7 @@ package HT6;
 
 import java.util.*;
 import java.util.Map.Entry;
+import java.util.stream.Collectors;
 
 /**
  *
@@ -19,7 +20,7 @@ public class Mapa{
      * @param deck
      * @param cantidadDeck 
      */
-    public void agregarCarta(String nombre, Map cartas, Map deck, Map<String, Integer> cantidadDeck, TreeMap tipoNombreDeck){
+    public void agregarCarta(String nombre, Map cartas, Map deck, Map<String, Integer> cantidadDeck){
         
         /**
          * En el caso de que exista un valor al llamar a la llave con el nombre proveído 
@@ -85,36 +86,22 @@ public class Mapa{
         }
     }
     
-    public void ordenarDeck(Map<String, String>deck){
+    public void ordenarDeck(Map<String, String>deck, Map<String, Integer> cantidadDeck){
         
-        List<Entry<String, String>> orden = new LinkedList<>(deck.entrySet());
-        Collections.sort(orden, new Comparator<Entry<String, String>>() {
-            @Override
-            public int compare(Entry<String, String> o1, Entry<String, String> o2) {
-                return o1.getValue().compareTo(o2.getValue());
-            }
-            
-        }); 
+        List<Entry<String, String>> ordenarValor = deck.entrySet().stream().sorted(Map.Entry.comparingByValue()).collect(Collectors.toList());
         
-        for(Entry<String, String> item:orden){
-            System.out.println(item);
+        for(int i =0 ; i < ordenarValor.size(); i++){
+         System.out.println("Nombre: " + ordenarValor.get(i).getKey() + " ||| " + "Tipo: " + ordenarValor.get(i).getValue() + " ||| " + "Cantidad en Deck: " + cantidadDeck.get(ordenarValor.get(i).getKey()));
         }
 
     }
     
     
     public void ordenarDB(Map<String, String> cartas){
-        List<Entry<String, String>> orden = new LinkedList<>(cartas.entrySet());
-        Collections.sort(orden, new Comparator<Entry<String, String>>() {
-            @Override
-            public int compare(Entry<String, String> o1, Entry<String, String> o2) {
-                return o1.getValue().compareTo(o2.getValue());
-            }
-            
-        }); 
+        List<Entry<String, String>> ordenarValor = cartas.entrySet().stream().sorted(Map.Entry.comparingByValue()).collect(Collectors.toList());
         
-        for(Entry<String, String> item:orden){
-            System.out.println(item);
+        for(int i = 0 ; i < ordenarValor.size(); i++){
+            System.out.println("Nombre: " + ordenarValor.get(i).getKey() + " ||| " + "Tipo: " + ordenarValor.get(i).getValue());
         }
     }
 }
