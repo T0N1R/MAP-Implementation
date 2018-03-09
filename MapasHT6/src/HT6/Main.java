@@ -43,8 +43,7 @@ public class Main {
         Map cartas = factory.crearMapa(opcion1);
         Map deck = factory.crearMapa(opcion1);
         Map<String, Integer> cantidadDeck = factory.crearMapa(opcion1);
-        TreeMap<String, String> tipoNombreCartas = new TreeMap<>();
-        TreeMap<String, String> tipoNombreDeck = new TreeMap<>();
+        
         
         File all_cards = new File("C:/Users/Antonio/Documents/NetBeansProjects/MapasHT6/MapasHT6/src/HT6/cards_desc.txt");
         FileReader leer = new FileReader(all_cards);
@@ -62,7 +61,6 @@ public class Main {
         
         System.out.println("Numero de cartas: " + cartas.size());
         System.out.println("A Hero Emerges" + cartas.get("A Hero Emerges"));
-        //String opcion2 = scan.nextLine();
         while(estado == true){
             System.out.println("ELIGA LA ACCION QUE DESEA REALIZAR: ");
             System.out.println("1- Agregar carta al deck");
