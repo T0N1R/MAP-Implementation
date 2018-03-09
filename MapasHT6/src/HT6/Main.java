@@ -60,7 +60,7 @@ public class Main {
         }
         
         System.out.println("Numero de cartas: " + cartas.size());
-        System.out.println("A Hero Emerges" + cartas.get("A Hero Emerges"));
+        
         while(estado == true){
             System.out.println("ELIGA LA ACCION QUE DESEA REALIZAR: ");
             System.out.println("1- Agregar carta al deck");
