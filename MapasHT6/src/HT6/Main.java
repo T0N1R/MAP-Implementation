@@ -45,7 +45,7 @@ public class Main {
         Map<String, Integer> cantidadDeck = factory.crearMapa(opcion1);
         
         
-        File all_cards = new File("C:/Users/Antonio/Documents/NetBeansProjects/MapasHT6/MapasHT6/src/HT6/cards_desc.txt");
+        File all_cards = new File("C:\\Users\\Andres\\Documents\\GitHub\\MAP-Implementation\\MapasHT6\\src\\HT6\\cards_desc.txt");
         FileReader leer = new FileReader(all_cards);
         BufferedReader buff = new BufferedReader(leer);
         
