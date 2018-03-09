@@ -43,6 +43,8 @@ public class Main {
         Map cartas = factory.crearMapa(opcion1);
         Map deck = factory.crearMapa(opcion1);
         Map<String, Integer> cantidadDeck = factory.crearMapa(opcion1);
+        TreeMap<String, String> tipoNombreCartas = new TreeMap<>();
+        TreeMap<String, String> tipoNombreDeck = new TreeMap<>();
         
         File all_cards = new File("C:/Users/Antonio/Documents/NetBeansProjects/MapasHT6/MapasHT6/src/HT6/cards_desc.txt");
         FileReader leer = new FileReader(all_cards);
@@ -70,6 +72,7 @@ public class Main {
             System.out.println("5-Mostrar el nombre y tipo de todas las cartas en la base de datos");
             System.out.println("6-Mostrar el nombre y tipo de todas las cartas del DB ordenadas por tipo");
             System.out.println("0-Salir");
+            System.out.print(" --> ");
             String opcion2 = scan.nextLine();
             
             switch (opcion2){
@@ -81,11 +84,9 @@ public class Main {
                 
                 case "1":{
                     System.out.println("*****************************");
-                    System.out.println("*****************************");
                     System.out.print("Ingrese el nombre de la carta que desea agregar: ");
                     String nombreCarta = scan.nextLine();
-                    yugi.agregarCarta(nombreCarta, cartas, deck, cantidadDeck);
-                    System.out.println("*****************************");
+                    yugi.agregarCarta(nombreCarta, cartas, deck, cantidadDeck, tipoNombreDeck);
                     System.out.println("*****************************");
 
                     break;
@@ -112,7 +113,11 @@ public class Main {
                 }
                 
                 case "4":{
-                    
+                    System.out.println("*****************************");
+                    System.out.println("*****************************");
+                    yugi.ordenarDeck(deck);
+                    System.out.println("*****************************");
+                    System.out.println("*****************************");
                     break;
                 }
                 
@@ -126,7 +131,11 @@ public class Main {
                 }
                 
                 case "6":{
-                    
+                    System.out.println("*****************************");
+                    System.out.println("*****************************");
+                    yugi.ordenarDB(cartas);
+                    System.out.println("*****************************");
+                    System.out.println("*****************************");
                     break;
                 }                
                 

@@ -1,13 +1,14 @@
 package HT6;
 
 import java.util.*;
+import java.util.Map.Entry;
 
 /**
  *
  * @author Antonio #17273
  * @author Andres Perez #16362
  */
-public class Mapa {
+public class Mapa{
     
         
         
@@ -18,7 +19,7 @@ public class Mapa {
      * @param deck
      * @param cantidadDeck 
      */
-    public void agregarCarta(String nombre, Map cartas, Map deck, Map<String, Integer> cantidadDeck){
+    public void agregarCarta(String nombre, Map cartas, Map deck, Map<String, Integer> cantidadDeck, TreeMap tipoNombreDeck){
         
         /**
          * En el caso de que exista un valor al llamar a la llave con el nombre proveído 
@@ -27,10 +28,8 @@ public class Mapa {
          * 
          */
         if(cartas.get(nombre) != null){
-            System.out.println(cartas.get(nombre));
             String tipo = (String) cartas.get(nombre);
             deck.put(nombre, tipo);
-            System.out.println(deck.get(nombre));
             
             
             /**
@@ -40,6 +39,14 @@ public class Mapa {
              */
             if(cantidadDeck.get(nombre) == null){
                 cantidadDeck.put(nombre, 1);
+                
+                /*
+                
+                //la llave va a ser el tipo y el valor va a ser el nombre de la carta
+                tipoNombreDeck.put(cartas.get(nombre),nombre);
+                
+                */
+                
                 System.out.println(nombre+": "+deck.get(nombre));
                 System.out.println("Cantidad en deck: "+": "+cantidadDeck.get(nombre));
             }
@@ -73,9 +80,41 @@ public class Mapa {
     
     public void mostrarDeck(Map<String, String> deck, Map<String, Integer> cantidadDeck){
         for(String llave: deck.keySet()){
-            System.out.println("Nombre: " + llave + "\n" + "Tipo: " + deck.get(llave) + "\n" +
-                    "Cantidad en deck: " + cantidadDeck.get(llave) + "\n" + "\n");
+            System.out.println("\n"+"Nombre: " + llave + "\n" + "Tipo: " + deck.get(llave) + "\n" +
+                    "Cantidad en deck: " + cantidadDeck.get(llave) + "\n");
         }
     }
     
+    public void ordenarDeck(Map<String, String>deck){
+        
+        List<Entry<String, String>> orden = new LinkedList<>(deck.entrySet());
+        Collections.sort(orden, new Comparator<Entry<String, String>>() {
+            @Override
+            public int compare(Entry<String, String> o1, Entry<String, String> o2) {
+                return o1.getValue().compareTo(o2.getValue());
+            }
+            
+        }); 
+        
+        for(Entry<String, String> item:orden){
+            System.out.println(item);
+        }
+
+    }
+    
+    
+    public void ordenarDB(Map<String, String> cartas){
+        List<Entry<String, String>> orden = new LinkedList<>(cartas.entrySet());
+        Collections.sort(orden, new Comparator<Entry<String, String>>() {
+            @Override
+            public int compare(Entry<String, String> o1, Entry<String, String> o2) {
+                return o1.getValue().compareTo(o2.getValue());
+            }
+            
+        }); 
+        
+        for(Entry<String, String> item:orden){
+            System.out.println(item);
+        }
+    }
 }
