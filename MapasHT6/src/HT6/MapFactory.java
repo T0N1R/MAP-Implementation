@@ -20,17 +20,17 @@ public class MapFactory {
     Map nuevo = null;
     public Map crearMapa(String opcion){
         
-        if(opcion.equals("H")){
+        if(opcion.equals("H") || opcion.equals("h")){
             nuevo = new HashMap<>();
             System.out.println("Se hizo un HashMap");
         }
         
-        if(opcion.equals("T")){
+        if(opcion.equals("T") || opcion.equals("t")){
             nuevo = new TreeMap<>();
             System.out.println("Se hizo un TreeMap");
         }
         
-        if(opcion.equals("L")){
+        if(opcion.equals("L") || opcion.equals("l")){
             nuevo = new LinkedHashMap<>();
             System.out.println("Se hizo un LinkedHashMap");
         }
